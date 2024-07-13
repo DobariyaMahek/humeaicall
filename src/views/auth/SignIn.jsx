@@ -29,6 +29,7 @@ export default function SignIn() {
     } else {
       error = "";
     }
+    console.log(name, value);
     return error;
   };
 
@@ -46,6 +47,7 @@ export default function SignIn() {
     const { value, name } = e.target;
     setPassword(value);
     const passwordError = validation(name, value);
+    console.log(passwordError);
     setError({
       ...error,
       [name]: passwordError,
@@ -100,6 +102,7 @@ export default function SignIn() {
                         placeholder="mail@simmmple.com"
                         id="email"
                         type="text"
+                        name="email"
                         value={email}
                         onChange={handleEmailChange}
                       />
@@ -116,7 +119,9 @@ export default function SignIn() {
                         label="Password*"
                         placeholder="Min. 8 characters"
                         id="password"
+                        password="password"
                         type="password"
+                        name="password"
                         value={password}
                         onChange={handlePasswordChange}
                       />

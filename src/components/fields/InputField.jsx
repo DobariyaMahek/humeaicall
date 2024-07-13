@@ -13,6 +13,7 @@ function InputField(props) {
     disabled,
     value,
     onChange,
+    name,
   } = props;
 
   return (
@@ -29,6 +30,7 @@ function InputField(props) {
         disabled={disabled}
         type={type}
         id={id}
+        name={name}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
