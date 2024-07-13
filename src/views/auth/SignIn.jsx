@@ -29,22 +29,27 @@ export default function SignIn() {
     } else {
       error = "";
     }
-    setError({
-      ...error,
-      [name]: error,
-    });
+    return error;
   };
 
   const handleEmailChange = (e) => {
     const { value, name } = e.target;
     setEmail(value);
-    validation(name, value);
+    const emailError = validation(name, value);
+    setError({
+      ...error,
+      [name]: emailError,
+    });
   };
 
   const handlePasswordChange = (e) => {
     const { value, name } = e.target;
     setPassword(value);
-    validation(name, value);
+    const passwordError = validation(name, value);
+    setError({
+      ...error,
+      [name]: passwordError,
+    });
   };
 
   const validateEmail = (email) => {
@@ -57,7 +62,11 @@ export default function SignIn() {
     e.preventDefault();
     const emailError = validation("email", email);
     const passwordError = validation("password", password);
-
+    setError({
+      ...error,
+      password: passwordError,
+      email: emailError,
+    });
     if (emailError || passwordError) {
       return;
     }
