@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import RtlLayout from "layouts/rtl";
 import AdminLayout from "layouts/admin";
-import AuthLayout from "layouts/auth";
+import SignIn from "views/auth/SignIn";
+
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("authUser")
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsLoggedIn(localStorage.getItem("authUser"));
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Routes>
-      <Route path="auth/*" element={<AuthLayout />} />
-      <Route path="admin/*" element={<AdminLayout />} />
-      <Route path="rtl/*" element={<RtlLayout />} />
-      <Route path="/" element={<Navigate to="/admin" replace />} />
+      <Route
+        path="/"
+        element={isLoggedIn ? <Navigate to="/admin/dashboard" /> : <SignIn />}
+      />
+      <Route
+        path="admin/*"
+        element={isLoggedIn ? <AdminLayout /> : <Navigate to="/" />}
+      />
     </Routes>
   );
 };
