@@ -28,7 +28,6 @@ const Tables = () => {
     handleFetch();
     // const getAccessToken = async () => {
     //   try {
-    //     console.log(data);
     //     setAccessToken(data);
     //   } catch (error) {
     //     console.error("Error fetching access token:", error);

@@ -29,7 +29,6 @@ export default function SignIn() {
     } else {
       error = "";
     }
-    console.log(name, value);
     return error;
   };
 
@@ -47,7 +46,6 @@ export default function SignIn() {
     const { value, name } = e.target;
     setPassword(value);
     const passwordError = validation(name, value);
-    console.log(passwordError);
     setError({
       ...error,
       [name]: passwordError,
@@ -106,7 +104,6 @@ export default function SignIn() {
                         value={email}
                         onChange={handleEmailChange}
                       />
-                      {console.log(error)}
                       {error?.email && (
                         <div className="mb-4 text-sm text-red-500">
                           {error?.email}

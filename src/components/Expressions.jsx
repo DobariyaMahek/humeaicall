@@ -25,8 +25,10 @@ export default function Expressions({ values }) {
           <div
             className={"flex items-center justify-between gap-1 pb-1 font-mono"}
           >
-            <div className={"truncate font-medium"}>{key}</div>
-            <div className={"tabular-nums opacity-50"}>{value.toFixed(2)}</div>
+            <div className={"truncate font-medium dark:text-white"}>{key}</div>
+            <div className={"tabular-nums opacity-50 dark:text-white"}>
+              {value?.toFixed(2)}
+            </div>
           </div>
           <div
             className={"relative h-1"}

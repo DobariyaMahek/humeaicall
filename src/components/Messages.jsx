@@ -6,7 +6,6 @@ import { forwardRef } from "react";
 
 const Messages = forwardRef(function Messages(_, ref) {
   const { messages } = useVoice();
-
   return (
     <motion.div
       layoutScroll
@@ -46,12 +45,14 @@ const Messages = forwardRef(function Messages(_, ref) {
                 >
                   <div
                     className={cn(
-                      "px-3 pt-4 text-xs font-medium capitalize leading-none opacity-50"
+                      "px-3 pt-4 text-xs font-medium capitalize leading-none opacity-50 dark:text-white"
                     )}
                   >
                     {msg.message.role}
                   </div>
-                  <div className={"px-3 pb-3"}>{msg.message.content}</div>
+                  <div className={"px-3 pb-3 dark:text-white"}>
+                    {msg.message.content}
+                  </div>
                   <Expressions values={msg.models.prosody?.scores ?? {}} />
                 </motion.div>
               );

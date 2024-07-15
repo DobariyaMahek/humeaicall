@@ -14,7 +14,7 @@ export default function Controls() {
     <div
       className={cn(
         "fixed bottom-0 left-0 flex w-full items-center justify-center p-4",
-        "from-card via-card/90 to-card/0 bg-gradient-to-t"
+        "from-card via-card/90 to-card/0 bg-gradient-to-t "
       )}
     >
       <AnimatePresence>
@@ -33,7 +33,7 @@ export default function Controls() {
               opacity: 0,
             }}
             className={
-              "bg-card border-border flex items-center gap-4 rounded-lg border p-4 shadow-sm"
+              "mb-2 flex items-center gap-4 rounded-lg rounded-lg border   border-gray-600  from-purple-600 to-blue-500 p-4 px-5 py-2.5 text-center text-sm font-medium text-white shadow-sm me-2  focus:outline-none focus:ring-4 focus:ring-blue-300 dark:border-none dark:bg-gradient-to-br dark:focus:ring-blue-800"
             }
           >
             <Toggle
@@ -47,9 +47,9 @@ export default function Controls() {
               }}
             >
               {isMuted ? (
-                <MicOff className={"size-4"} />
+                <MicOff className={"size-4 text-gray-800 "} />
               ) : (
-                <Mic className={"size-4"} />
+                <Mic className={"size-4 text-gray-800"} />
               )}
             </Toggle>
 
@@ -58,7 +58,9 @@ export default function Controls() {
             </div>
 
             <Button
-              className={"flex items-center gap-1"}
+              className={
+                "flex items-center gap-1 border border-red-500 text-white  dark:border dark:border-white"
+              }
               onClick={() => {
                 disconnect();
               }}
@@ -66,12 +68,12 @@ export default function Controls() {
             >
               <span>
                 <Phone
-                  className={"size-4 opacity-50"}
+                  className={"size-4 text-red-500 opacity-50 dark:text-white"}
                   strokeWidth={2}
                   stroke={"currentColor"}
                 />
               </span>
-              <span>End Call</span>
+              <span className="text-red-500 dark:text-white">End Call</span>
             </Button>
           </motion.div>
         ) : null}
