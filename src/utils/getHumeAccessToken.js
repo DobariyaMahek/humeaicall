@@ -3,9 +3,9 @@ import { fetchAccessToken } from "@humeai/voice";
 
 export const getHumeAccessToken = async () => {
   const accessToken = await fetchAccessToken({
-    apiKey: "uVq4xJ2pIRVGeEGhsC8eFbj1HhjsZ4YCpKSI5gbmyUruyMkH",
+    apiKey: "AhkdUj5mjSFzY9oQWwXMivX7AkiGiUyZwcuEveG7gXQvBwLL",
     secretKey:
-      "oX7Er4x4WEQiEJUxjVDtZNuxmBGDWUVX2FnZ2hfn908Nqxw6YAoQAHfZCzASaGXE",
+      "CWkJKjUmchCzmxraEBnHaxWLTlTEUB1yXXNY8GgxeKBO0wNiQrsW2yhx8yKZJq2J",
   });
   if (accessToken === "undefined") {
     return null;

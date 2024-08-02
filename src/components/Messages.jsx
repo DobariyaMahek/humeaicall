@@ -6,6 +6,7 @@ import { forwardRef } from "react";
 
 const Messages = forwardRef(function Messages(_, ref) {
   const { messages } = useVoice();
+  console.log(messages)
   return (
     <motion.div
       layoutScroll
