@@ -104,7 +104,7 @@ const Navbar = (props) => {
                   className="mt-3 text-sm font-medium  transition duration-150 ease-out  hover:ease-in"
                   onClick={() => {
                     localStorage.clear();
-                    window.location.href = "/";
+                    // window.location.href = "/";
                     // window.location.reload();
                   }}
                 >
