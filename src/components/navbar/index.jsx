@@ -105,7 +105,7 @@ const Navbar = (props) => {
                   onClick={() => {
                     localStorage.clear();
                     window.location.href = "/";
-                    window.location.reload();
+                    // window.location.reload();
                   }}
                 >
                   Logout
