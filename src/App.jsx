@@ -16,7 +16,7 @@ const App = () => {
 
     return () => clearInterval(interval);
   }, []);
-
+  console.log(isLoggedIn);
   return (
     <Routes>
       <Route

@@ -99,17 +99,14 @@ const Navbar = (props) => {
                 >
                   Newsletter Settings
                 </a> */}
-                <a
-                  href=" "
-                  className="mt-3 text-sm font-medium  transition duration-150 ease-out  hover:ease-in"
+                <p
+                  className="mt-3 cursor-pointer text-sm  font-medium transition duration-150  ease-out hover:ease-in"
                   onClick={() => {
                     localStorage.clear();
-                    // window.location.href = "/";
-                    // window.location.reload();
                   }}
                 >
                   Logout
-                </a>
+                </p>
               </div>
             </div>
           }
